@@ -1,0 +1,44 @@
+public class MainActivity extends AppCompatActivity {
+    private TextView text1,text2,text3,text4,text5 ;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        text1=findViewById(R.id.text);
+
+        init();
+
+      GetYaziSitili("fonts/DancingScript-Bold.ttf",text1);
+        GetYaziSitili("fonts/DancingScript-Medium.ttf",text2);
+        GetYaziSitili("fonts/DancingScript-Regular.ttf",text3);
+        GetYaziSitili("fonts/DancingScript-SemiBold.ttf",text4);
+        GetYaziSitili("fonts/Lato-Black.ttf",text5);
+   
+       
+
+    }
+
+
+
+    private void init() {
+
+        text1=findViewById(R.id.text1);
+        text2=findViewById(R.id.text2);
+        text3=findViewById(R.id.text3);
+        text4=findViewById(R.id.text4);
+        text5=findViewById(R.id.text5);
+      
+
+
+    }
+
+    private void GetYaziSitili(String fontNamePath,TextView text) {
+        Typeface ountFont=Typeface.createFromAsset(getAssets(),fontNamePath);
+        text.setText("Hello World  "+fontNamePath);
+        text.setTypeface(ountFont);
+
+    }
+
+}
